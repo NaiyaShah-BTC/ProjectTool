@@ -1,19 +1,21 @@
-<div class="nested-fields">
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :status, "Done" %>
-    <%= f.check_box :status %>
-  </div>
-  <div class="field">
-    <%= f.label :deadline %>
-    <%= f.text_field :deadline %>
-  </div>
-  <%= link_to_remove_association "remove task", f %>
+<div class="nested-fields panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+    <div class="form-check">
+      <%= f.label :status, "Done", class: 'form-check-label', for: 'status_cb' %>
+      <%= f.check_box :status, class: 'form-check-input', id: 'status_cb' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :deadline %>
+      <%= f.text_field :deadline, class: 'form-control'%>
+    </div>
+    <%= link_to_remove_association "Remove", f, class: 'btn btn-sm btn-danger' %>
+    </div>
 </div>

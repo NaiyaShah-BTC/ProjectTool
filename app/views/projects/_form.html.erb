@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
   <h3>Tasks </h3>
@@ -21,13 +21,12 @@
     <%= form.fields_for :tasks do |task| %>
       <%= render 'task_fields', f: task %>
     <% end %>
-    </div>
-    <div class="links">
-      <%= link_to_add_association 'add task', form, :tasks %>
-    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="links">
+    <%= link_to_add_association 'Add task', form, :tasks, class: 'btn btn-sm btn-success' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.submit 'Save', class: 'btn btn-sm btn-success' %>
   </div>
 <% end %>
