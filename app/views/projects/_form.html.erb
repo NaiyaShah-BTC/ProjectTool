@@ -16,6 +16,17 @@
     <%= form.text_field :title %>
   </div>
 
+  <h3>Tasks </h3>
+  <div id="tasks">
+    <%= form.fields_for :tasks do |task| %>
+      <%= render 'task_fields', f: task %>
+    <% end %>
+    </div>
+    <div class="links">
+      <%= link_to_add_association 'add task', form, :tasks %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
