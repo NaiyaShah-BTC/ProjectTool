@@ -2,12 +2,15 @@
   <strong>Title:</strong>
   <%= @task.title %>
 </h3>
-  <br>
-  <b>Description: </b><%= @task.description %>
-  <br>
-  <b>Status:</b> <%= @task.status? ? "Done" : "Not Done"%>
-  <br>
-  <b>Deadline:</b> <%= @task.deadline %>
+<br>
+<b>Description:
+</b><%= @task.description %>
+<br>
+<b>Status:</b>
+<%= @task.status? ? "Done" : "Not Done"%>
+<br>
+<b>Deadline:</b>
+<%= @task.deadline %>
 <hr>
 <h4>Comments</h4>
 <%= form_with(model: @task, local: true) do |form| %>
@@ -17,6 +20,5 @@
   <div class="form-group">
     <%= form.submit 'Save', class: 'btn btn-sm btn-success' %>
   </div>
-
 <% end %>
 <%= link_to 'Back', project_path(@task.project) %>
