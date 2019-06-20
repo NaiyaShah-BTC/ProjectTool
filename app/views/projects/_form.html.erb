@@ -16,14 +16,14 @@
     <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <h3>Tasks </h3>
+  <h3>Project Tasks </h3>
   <div id="tasks">
     <%= form.fields_for :tasks do |task| %>
       <%= render 'task_fields', f: task %>
     <% end %>
   </div>
   <div class="links">
-    <%= link_to_add_association 'Add task', form, :tasks, class: 'btn btn-sm btn-success' %>
+    <%= link_to_add_association 'Add task', form, :tasks, class: 'btn btn-sm btn-info' %>
   </div>
   <br>
   <div class="form-group">
